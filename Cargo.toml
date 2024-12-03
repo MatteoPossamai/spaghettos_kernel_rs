@@ -10,3 +10,9 @@ panic = "abort"
 
 [profile.release]
 panic = "abort"
+
+[lib]
+crate-type = ["staticlib"]
+
+[build]
+target = "x86_64-unknown-none"
