@@ -2,17 +2,16 @@
 name = "spaghettos_kernel_rs"
 version = "0.1.0"
 edition = "2021"
-
-[dependencies]
+authors = ["Matteo Possamai <mpossamaim@gmail.com>"]
 
 [profile.dev]
-panic = "abort"
+panic = "abort" 
 
 [profile.release]
-panic = "abort"
+panic = "abort" 
 
-[lib]
-crate-type = ["staticlib"]
+[dependencies]
+bootloader = "0.9"
 
 [build]
-target = "x86_64-unknown-none"
+target = "x86_64-spaghettos.json"
