@@ -1,3 +1,4 @@
+/// The standard color palette in VGA text mode.
 #[allow(dead_code)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(u8)]
@@ -20,11 +21,13 @@ pub enum Color {
     White = 15,
 }
 
+/// A combination of a foreground and a background color.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(transparent)]
-pub struct ColorCode(pub u8);
+pub struct ColorCode(u8);
 
 impl ColorCode {
+    /// Create a new `ColorCode` with the given foreground and background colors.
     pub fn new(foreground: Color, background: Color) -> ColorCode {
         ColorCode((background as u8) << 4 | (foreground as u8))
     }

@@ -1,13 +1,14 @@
-use crate::assetts;
-pub mod colors;
-pub mod console_writer;
+mod buffer;
+mod color;
+mod writer;
 
-pub unsafe fn print_start() -> i32 {
-    let mut writer = console_writer::ConsoleWriter::new(None, None, None);
+use color::{Color, ColorCode};
 
-    writer.clear_ui();
-    writer.set_monitor_color(colors::Color::Magenta);
-    writer.print_string(assetts::CREDENTIALS);
+use crate::{println, set_color_code};
 
-    0
+pub fn print_start() {
+    println!("HELLO");
+    let color_code = ColorCode::new(Color::Magenta, Color::White);
+    set_color_code!(color_code);
+    println!("COME VAL")
 }

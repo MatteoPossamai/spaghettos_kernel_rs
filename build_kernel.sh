@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exit immediately if a command exits with a non-zero status.
-set -e
+# set -e
 
 OS_FILE=target/x86_64_spaghettos/debug/bootimage-spaghettos_kernel_rs.bin
 
